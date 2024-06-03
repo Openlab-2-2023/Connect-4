@@ -1,0 +1,28 @@
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* font textu */
+    text-align: center;/* dostredu textu */
+}
+#board {
+    height: 540px; /* vyska */
+    width: 630px; /* +sirka */
+    background-color: blue; /* farba dosky */
+    border: 10px solid navy; /* hrana dosky */
+    display: flex; /* cele do stredu */
+    margin: 0 auto; /* cele do stredu */
+    flex-wrap:wrap ; /* cele do stredu */
+}
+.tile{
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid navy;
+}
+.red-piece{
+    background-color: red;
+}
+.yellow-piece{
+    background-color: yellow;
+}

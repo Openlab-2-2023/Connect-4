@@ -1,28 +1,21 @@
 
 
- var player1 = "P1"; // hrac jedna
-var player2 = "P2";// hrac dva
-var currPlayer = player1; // zacinajuci hrac je P1
+ var player1 = "P1"; 
+var player2 = "P2";
+var currPlayer = player1; 
 
-var gameOver = false; // ak niaky hrac vyhra AKA hra bude ukoncena tak nedovoli ti to vkladat ziadne policka
-var board; // variable dosky ide hlavne preto aby javascript dokazal vygenerovat hracie pole (v html je len jeden div do ktoreho sa pridavaju daka JS dalsie vid. chrome preskumat kod)
+var gameOver = false; 
+var board; 
 
-var rows = 6; // riadok nic narocne
-var columns = 7; //stlpec nic narocne
-var currColumns = []; //sleduje riadok v kazdom stplci (neskor sa ukaze preco)
+var rows = 6; 
+var columns = 7; 
+var currColumns = []; 
 
+function setGame() { 
+    board = [];
+    currColumns = [5, 5, 5, 5, 5, 5, 5]; 
 
-//velmi jednoduchy pokyn. Ked sa html zapne (window.onload) aktivuje funkciu setGame() ktora nacita a pripravy ihned na hru 
-// chcel by som vytvorit tlacidlo Play ktora vygeneruje hru LEN ked hraci su pripraveny hrat (plus niaka animacia k tvorbe policok)
-window.onload = function() {
-    setGame();
-}
-
-function setGame() { //tu to zacne byt matuce takze citaj pozorne
-    board = []; //vytvorime array v ktorej sa budu nachadzat suradnice policka ktore kliknes
-    currColumns = [5, 5, 5, 5, 5, 5, 5]; //jednoducho gravitacia aby si nemohol policko vlozit kam chces 
-
-    for (let r = 0; r < rows; r++) { //moc dlhe na vysvetlenie jedine co potrebujes vediet ze vytvori <div id="0-0" class="tile"><div>
+    for (let r = 0; r < rows; r++) { 
         let row = [];
         for (let c = 0; c < columns; c++) {
             // JS
@@ -132,4 +125,5 @@ function setWinner(r, c) {
         winner.innerText = "Player2 Wins";
     }
     gameOver = true;
+    over();
 }

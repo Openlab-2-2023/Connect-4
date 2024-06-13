@@ -10,6 +10,7 @@ body{
     display: flex; /* cele do stredu */
     margin: 0 auto; /* cele do stredu */
     flex-wrap:wrap ; /* cele do stredu */
+    border-radius: 15px ;
 }
 .tile{
     height: 70px;
@@ -23,7 +24,47 @@ body{
 }
 .red-piece{
     background-color: red;
+
+    transition: 0.6s; /* pridá animáciu pomalého objavenia */
 }
 .yellow-piece{
     background-color: yellow;
+
+    transition: 0.6s;
+}
+
+ .tile:hover {
+    cursor:pointer;
+  /*  border-color: orangered;
+    transition: 0.6s;*/
+} 
+#nadpis {
+    background-color: blue;
+    border: 5px solid navy;
+    color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 20px;
+}
+#stop {
+    background-color:blue;
+    border: 3.5px solid navy;
+    opacity: 1.0;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 15px;
+}
+#stop:hover {
+    border: 3.5px solid orangered;
+    background-color: orange;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#stop:disabled {
+    opacity: 0.20;
+    border: 0px solid transparent;
+    background-color: lightgray;
+    color: black;
+    padding: 3px;
 }
